@@ -2,46 +2,38 @@
 
 $largeur = 20;
 $hauteur = 10;
-$haut = 1;
-$bas = 1;
 $i = 1;
-$j = 1;
+$j = 2;
 
-
-    for($haut == 1; $haut <= $largeur; $haut++)
+    // gestion du haut du rectangle (première ligne)
+    for($i = 1; $i <= $largeur; $i++)
     {
-        
-        if ($haut <= $largeur) {
-            echo "#";
-        } else {
-            continue;
-        }
+            echo "# &nbsp";
         
     }
 
     echo "<br>";
 
-        for ($j = 2; $j < $hauteur; $j++)
+    // gestion du milieu du rectangle, avec les lignes vides
+    for ($j = 2; $j < $hauteur; $j++)
+    {
+        for ($i = 1; $i <= $largeur; $i++)
         {
-            for ($i = 1; $i <= $largeur; $i++)
-            {
-                if ($i == 1) {
-                    echo "#";
-                } elseif ($i == $largeur) {
-                    echo "#<br>";
-                } else {
-                    echo " ";
-                }
+            if ($i == 1) {
+                echo "# &nbsp";
+            } elseif ($i == $largeur) {
+                echo "#<br>";
+            } else {
+                echo "  &nbsp";
             }
         }
+    }
 
-    for ($bas == 1; $bas <= $largeur; $bas++)
+    $i = 1;
+
+    // gestion du bas du rectangle (dernière ligne)
+    for ($i = 1; $i <= $largeur; $i++)
     {
-        // gestion du bas du rectangle
-       if ($bas <= $largeur) {
-            echo "#";
-        }  else {
-            break;
-        }
+            echo "# &nbsp";
     }
 ?>
