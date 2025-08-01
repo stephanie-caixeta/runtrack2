@@ -23,7 +23,7 @@
                 $compteur++;
         }
 
-        echo "Le nombre d’argument GET envoyé est :" . $compteur;
+        echo "Le nombre d’argument GET envoyé est : " . $compteur;
     ?>
     
 </body>

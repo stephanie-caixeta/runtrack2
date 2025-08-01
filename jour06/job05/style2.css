@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(240, 165, 231);
+}
+
+#style {
+    width: 154px;
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: dotted;
+}

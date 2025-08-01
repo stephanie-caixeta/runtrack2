@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<form method="GET">
+<form method="POST">
           <label for="largeur">Largeur:</label>
           <input type="text" id="largeur" name="largeur">
           <br />
@@ -12,9 +12,9 @@
 </form>
 
 <?php 
-
-    $largeur = $_GET['largeur'];
-    $hauteur = $_GET['hauteur'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $largeur = $_POST['largeur'];
+    $hauteur = $_POST['hauteur'];
     $i = 1; // $i parcourera mes lignes
     $j = 1; // $j parcourera ma hauteur
     $k = 0; // $k sert de référence pour former l'intérieur du triangle
@@ -44,38 +44,27 @@ for ($j = 1; $j <= $hauteur; $j++) {
     $k = $k + 2; // j'incrémente de deux la variable $k pour que le triangle se décale correctement
     echo "<br>"; // j'affiche un retour à la ligne
 }
+}
 
-$i = 1;
-$j = 1;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $largeur = $_POST['largeur'];
+    $hauteur = $_POST['hauteur'];
+    $i = 1;
+    $j = 1;
 
-    // $i = 1;
-
-    // gestion du milieu du rectangle, avec les lignes vides
-    for ($j = 1; $j < $hauteur; $j++)
-    {
-        for ($i = 1; $i <= $largeur; $i++)
-        {
-            if ($i == 1) {
+    for ($j = 1; $j <= $hauteur; $j++){
+        for ($i = 1; $i <= $largeur; $i++) {
+            if ($i == 1 OR $i == $largeur) {
                 echo "|";
-            } elseif ($i == $largeur) {
-                echo "|<br>";
+            } elseif ($j == $hauteur) {
+                echo "_";
             } else {
-                echo " ";
+                echo "&nbsp&nbsp";
             }
         }
+    echo "<br>";
     }
-
-    $i = 1;
-
-    // gestion du bas du rectangle (dernière ligne)
-    for ($i = 1; $i <= $largeur; $i++)
-    {
-        if ($i == 1 OR $i == $largeur) {
-            echo "|";
-        } else {
-               echo "_";
-        }
-    }
+}
 ?>
 
 </html>
