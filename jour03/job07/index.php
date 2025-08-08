@@ -1,6 +1,6 @@
 <?php 
 
-$str = "certaines choses changent, et d'autres ne changeront jamais.";
+$str = "Certaines choses changent, et d'autres ne changeront jamais.";
 $i = 0;
 
 for ($i = 0; isset($str[$i]); $i++) {
